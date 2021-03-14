@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const Oracle_1 = require("./Oracle");
+require('dotenv').config();
+require("dotenv").config({ path: './../.env' });
+require("dotenv").config({ path: './../../.env' });
+require("dotenv").config({ path: '../../../.env' });
+require("dotenv").config({ path: '../../../../.env' });
+require("dotenv").config({ path: '../../../../../.env' });
+console.log("******* ", process.env['ORACLE_PUBKEY']);
+const oracle = new Oracle_1.ZapOracle();
+oracle.initialize().catch(console.error);

@@ -9,14 +9,15 @@
             class="rounded-borders"
     >
 
-      <q-carousel-slide name="style" class="column no-wrap flex-center">
+      <q-carousel-slide name="style" class="column no-wrap">
 
-        <div class="q-mt-md text-center">
+        <div class="q-mt-md">
 <!--          <q-img src="https://static.coingecko.com/s/thumbnail-007177f3eca19695592f0b8b0eabbdae282b54154e1be912285c9034ea6cbaf2.png"></q-img>-->
 <!--          -->
 <!--          {{ coingecko }}-->
 
-          <zap-bond-widget address="0x513846a568407Ebd16bc29d238C364702963377D" endpoint="CoinCap.io Datafeed"></zap-bond-widget>
+          <zap-bond-widget address="0xF02491e199565B9822ECf001eB6a336959D655C8" endpoint="CoinCap.io Datafeed"></zap-bond-widget>
+
 
         </div>
       </q-carousel-slide>
