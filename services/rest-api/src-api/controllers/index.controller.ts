@@ -41,6 +41,10 @@ interface coincapBodyData {
     asset: any;
 }
 
+interface coinGeckoBodyData {
+    asset: string;
+}
+
 // interface Health {
 //   online:boolean
 //   name:string
@@ -131,16 +135,16 @@ export class IndexController extends Controller {
      */
 
     @Post('/coinGeckoQuoteUsd')
-    public async coinGeckoQuoteUsd(@Body() body: any): Promise<any> {
+    public async coinGeckoQuoteUsd(@Body() body: coinGeckoBodyData): Promise<number> {
         let tag = TAG + " | coinGeckoQuoteUsd | "
         try{
-            log.debug(tag,"account: ",body)
+            log.info(tag,"account: ",body)
             if(!body.asset) throw Error("body.asset must be defined!")
 
             let data = await CoinGeckoClient.coins.fetch('bitcoin', {});
             console.log("data: ",data)
 
-            return data.market_data.current_price.usd
+            return (data.data.market_data.current_price.usd * 100)
         }catch(e){
             let errorResp:Error = {
                 success:false,
