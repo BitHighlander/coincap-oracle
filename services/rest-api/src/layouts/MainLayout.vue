@@ -137,7 +137,14 @@ const linksData = [
     caption: 'Needed to use our platform.',
     icon: 'card_travel',
     link: 'https://metamask.io/'
+  },
+  {
+    title: 'Oracle Documentation',
+    caption: 'How to use our oracles.',
+    icon: 'build',
+    link: 'https://oracles.cc/docs/'
   }
+
 
 ];
 
