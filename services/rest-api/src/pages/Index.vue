@@ -1,3 +1,4 @@
+<!--
 <template>
   <div class="q-pa-md">
     <q-carousel
@@ -16,7 +17,7 @@
             <div width="50px" height="60px" style="width: 10%;">
                 <q-img src="https://static.coingecko.com/s/thumbnail-007177f3eca19695592f0b8b0eabbdae282b54154e1be912285c9034ea6cbaf2.png"></q-img>
             </div>
-<!--          -->
+&lt;!&ndash;          &ndash;&gt;
           {{ coingecko }}
             <br/>
 
@@ -129,5 +130,30 @@ export default {
   methods: {
     ...mapMutations(['showModal', 'hideModal']),
   },
+}
+</script>
+-->
+<template>
+
+  <q-page class="flex flex-center">
+    <img
+        alt="geckologo"
+        src="~assets/coingeckoimage.png"
+    >
+    <zap-bond-widget address="0x15A9c99F76245912b84046FE6aF39B9FB51Dcd38" endpoint="CoingeckoUSD"></zap-bond-widget>
+  </q-page>
+</template>
+<script>
+export default {
+  name: 'PageIndex',
+  data () {
+    return {
+      coinGeckoOracle:"0xF02491e199565B9822ECf001eB6a336959D655C8",
+      status:"online",
+      accounts:"",
+      slide: 'style',
+      coingecko: 'CoinGecko is a cryptocurrency ranking website that gives a 360 degree overview of cryptocurrencies.'
+    }
+  }
 }
 </script>
