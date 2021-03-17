@@ -142,8 +142,19 @@ export default {
         src="~assets/coingeckoimage.png"
     >
     <zap-bond-widget address="0x15A9c99F76245912b84046FE6aF39B9FB51Dcd38" endpoint="CoingeckoUSD"></zap-bond-widget>
+
+    <textarea>
+      This oracle provides the USD value of any asset on CoinGecko.
+
+      We will be continually updating this textarea with documentation and examples in regards to implementation of this oracle.
+    </textarea>
+
+
   </q-page>
+
 </template>
+
+
 <script>
 export default {
   name: 'PageIndex',

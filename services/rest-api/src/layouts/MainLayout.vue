@@ -79,7 +79,7 @@
     <q-footer elevated>
       <q-toolbar>
 
-        <div>Providing enterprise level oracle solutions.</div>
+        <div>enterprise level oracle solutions</div>
       </q-toolbar>
     </q-footer>
 
@@ -121,7 +121,7 @@ const linksData = [
     link: 'https://discord.gg/PfcecUPbUH'
   },
   {
-    title: 'Blog',
+    title: 'Medium',
     caption: 'https://medium.com/@oracles.cc',
     icon: 'record_voice_over',
     link: 'https://medium.com/@oracles.cc'
