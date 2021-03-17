@@ -1,4 +1,4 @@
-<template>
+<!--<template>
     <q-dialog v-model="visible" persistent position="top">
         <component :is="component"></component>
     </q-dialog>
@@ -45,4 +45,4 @@ export default {
     }
   }
 };
-</script>
+</script>-->
