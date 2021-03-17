@@ -161,6 +161,7 @@ export class ZapOracle {
             networkId: (await this.web3.eth.net.getId()).toString(),
             networkProvider: this.web3.currentProvider
         })
+        console.log("owner: ",owner)
         const ethBalance = await this.web3.eth.getBalance(owner)
         const zapBalance = await this.zapToken.balanceOf(owner)
         console.log("Wallet contains:", fromWei(ethBalance, "ether"), "ETH ;", fromWei(zapBalance, "ether"), "ZAP");

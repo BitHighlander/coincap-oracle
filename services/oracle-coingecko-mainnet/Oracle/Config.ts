@@ -1,14 +1,15 @@
 
 
 export const Config = {
-    "title": "coin-gecko-basic",
+    "title": "Oracles.cc OFFICIAL",
     "public_key": process.env['ORACLE_PUBKEY'],
-    "NODE_URL": "wss://"+process.env['ETH_NETWORK']+".infura.io/ws/v3/"+process.env['INFURA_API_KEY'],
-    "mnemonic": process.env['ORACLE_SEED'],
+    "NODE_URL": "wss://mainnet.infura.io/ws/v3/"+process.env['INFURA_API_KEY'],
+    "mnemonic": process.env['ORACLE_SEED_MAINNET'],
     "STATUS_URL": "",
     "EndpointSchema": {
-        "name": "(Oracles.cc) CoinGecko USDprice",
+        "name": "CoingeckoUSD",
         "curve": [
+            3,
             0,
             0,
             100000000,
@@ -19,7 +20,7 @@ export const Config = {
         "queryList": [
             {
                 "query": "USD",
-                "params": ['BTC'],
+                "params": ['Bitcoin'],
                 "dynamic": false,
                 "responseType": "[int]"
             }
