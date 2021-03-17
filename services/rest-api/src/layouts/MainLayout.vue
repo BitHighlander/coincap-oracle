@@ -31,7 +31,9 @@
 
         </q-toolbar-title>
 
-        <!--        <q-btn label="Get Zap" color="success" @click="alert = true" />-->
+<!--
+        <q-btn label="Buy Zap" color="success" @click="alert = true" />
+-->
 
         <div>
 
@@ -42,32 +44,13 @@
 
 
 
-    <q-drawer
-        v-model="leftDrawerOpen"
-        show-if-above
-        bordered
-        content-class="bg-grey-1"
-    >
-      <q-list>
-        <q-item-label
-            header
-            class="text-grey-8"
-        >
-          Navigation Bar
-        </q-item-label>
-        <EssentialLink
-            v-for="link in essentialLinks"
-            :key="link.title"
-            v-bind="link"
-        />
-      </q-list>
-    </q-drawer>
 
-    <!--    <q-dialog v-model="alert" align="center"  style="min-width:450px;">
-          <q-card style="min-width:450px;">
-            <q-card-section>
-              <div class="text-h6">Buy Zap on Uniswap</div>
-            </q-card-section>
+
+    <q-dialog v-model="alert" align="center"  style="min-width:450px;">
+      <q-card style="min-width:450px;">
+        <q-card-section>
+          <div class="text-h6">Buy Zap on Uniswap</div>
+        </q-card-section>
 
             <q-card-section>
               <iframe
@@ -89,13 +72,37 @@
             <q-card-actions align="right">
               <q-btn flat label="OK" color="primary" v-close-popup />
             </q-card-actions>
-          </q-card>
-        </q-dialog>-->
+      </q-card>
+    </q-dialog>
+
+
     <q-footer elevated>
       <q-toolbar>
-        <q-toolbar-title>enterprise level oracle solutions</q-toolbar-title>
+
+        <div>Providing enterprise level oracle solutions.</div>
       </q-toolbar>
     </q-footer>
+
+    <q-drawer
+        v-model="leftDrawerOpen"
+        show-if-above
+        bordered
+        content-class="bg-grey-1"
+    >
+      <q-list>
+        <q-item-label
+            header
+            class="text-grey-8"
+        >
+          Helpful Resources
+        </q-item-label>
+        <EssentialLink
+            v-for="link in essentialLinks"
+            :key="link.title"
+            v-bind="link"
+        />
+      </q-list>
+    </q-drawer>
 
     <q-page-container>
       <router-view />
@@ -122,8 +129,14 @@ const linksData = [
   {
     title: 'Zap',
     caption: 'Zap.org',
-    icon: 'rss_feed',
+    icon: 'offline_bolt',
     link: 'https://zap.org'
+  },
+  {
+    title: 'MetaMask',
+    caption: 'Needed to use our platform.',
+    icon: 'card_travel',
+    link: 'https://metamask.io/'
   }
 
 ];
@@ -139,3 +152,4 @@ export default {
   }
 }
 </script>
+

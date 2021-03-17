@@ -1,4 +1,4 @@
-<!--<template>
+<template>
     <q-card class="text-center q-pb-lg q-pl-lg q-pr-lg" style="min-width:450px;">
         <q-card-section>
             <h4>Buy Zap</h4>
@@ -27,4 +27,4 @@
         methods: {
         }
     }
-</script>-->
+</script>

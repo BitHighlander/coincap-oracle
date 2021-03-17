@@ -1,5 +1,4 @@
-<!--
-<template>
+<!--<template>
   <div class="q-pa-md">
     <q-carousel
             v-model="slide"
@@ -48,7 +47,8 @@
 
     </div>
   </div>
-</template>
+</template>-->
+
 <script>
 
 
@@ -131,8 +131,9 @@ export default {
     ...mapMutations(['showModal', 'hideModal']),
   },
 }
+
+
 </script>
--->
 <template>
 
   <q-page class="flex flex-center">
