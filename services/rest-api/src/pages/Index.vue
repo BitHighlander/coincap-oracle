@@ -1,53 +1,55 @@
-<!--<template>
-  <div class="q-pa-md">
-    <q-carousel
-            v-model="slide"
-            transition-prev="slide-right"
-            transition-next="slide-left"
-            animated
-            control-color="primary"
-            class="rounded-borders"
+<template>
+
+  <q-page class="flex flex-center">
+
+
+
+    <q-btn label="Buy Zap" color="success" @click="alert = true" />
+    <q-dialog v-model="alert" align="center"  style="min-width:450px;">
+      <q-card style="min-width:450px;">
+        <q-card-section>
+          <div class="text-h6">Buy Zap on Uniswap</div>
+        </q-card-section>
+
+        <q-card-section>
+          <iframe
+                  src="https://app.uniswap.org/#/swap?outputCurrency=0x6781a0f84c7e9e846dcb84a9a5bd49333067b104"
+                  height="660px"
+                  width="100%"
+                  style="
+              border: 0;
+              margin: 0 auto;
+              display: block;
+              border-radius: 10px;
+              max-width: 800px;
+              min-width: 300px;
+            "
+                  id="myId"
+          />
+        </q-card-section>
+
+        <q-card-actions align="right">
+          <q-btn flat label="OK" color="primary" v-close-popup />
+        </q-card-actions>
+      </q-card>
+    </q-dialog>
+
+    <img
+            alt="geckologo"
+            src="~assets/coingeckoimage.png"
     >
+    <zap-bond-widget address="0x15A9c99F76245912b84046FE6aF39B9FB51Dcd38" endpoint="CoingeckoUSD"></zap-bond-widget>
 
-      <q-carousel-slide name="style" class="column no-wrap">
+    <textarea>
+      This oracle provides the USD value of any asset on CoinGecko.
 
-        <div class="q-mt-md">
-            <h3>Coin Gecko Datafeed</h3>
-            <div width="50px" height="60px" style="width: 10%;">
-                <q-img src="https://static.coingecko.com/s/thumbnail-007177f3eca19695592f0b8b0eabbdae282b54154e1be912285c9034ea6cbaf2.png"></q-img>
-            </div>
-&lt;!&ndash;          &ndash;&gt;
-          {{ coingecko }}
-            <br/>
-
-            <zap-bond-widget address="0x15A9c99F76245912b84046FE6aF39B9FB51Dcd38" endpoint="CoingeckoUSD"></zap-bond-widget>
+      We will be continually updating this textarea with documentation and examples in regards to implementation of this oracle.
+    </textarea>
 
 
-        </div>
-      </q-carousel-slide>
+  </q-page>
 
-    </q-carousel>
-
-    <div class="row justify-center">
-      <q-btn-toggle
-              glossy
-              v-model="slide"
-              :options="[
-          { label: 1, value: 'style' },
-          // { label: 2, value: 'tv' },
-          // { label: 3, value: 'layers' },
-        ]"
-      ></q-btn-toggle>
-
-          <div id="content" style="width: 100%;">
-            Powered by :zap:
-          <br />
-            your metamask address: {{accounts}}
-          </div>
-
-    </div>
-  </div>
-</template>-->
+</template>
 
 <script>
 
@@ -62,12 +64,13 @@ export default {
   },
   data () {
     return {
-      coinGeckoOracle:"",
+      alert:false,
+      coinGeckoOracle:"0xF02491e199565B9822ECf001eB6a336959D655C8",
       status:"online",
       accounts:"",
       slide: 'style',
-      coincap: 'CoinCap keeps you up to date on the status of your crypto with real-time market data and tracking features. ',
       coingecko: 'CoinGecko is a cryptocurrency ranking website that gives a 360 degree overview of cryptocurrencies.',
+      coincap: 'CoinCap keeps you up to date on the status of your crypto with real-time market data and tracking features. ',
       alethiometer: 'alethiometer measures general market consensus of an observed price. they are calculated using a number of data sources.'
     }
   },
@@ -130,42 +133,5 @@ export default {
   methods: {
     ...mapMutations(['showModal', 'hideModal']),
   },
-}
-
-
-</script>
-<template>
-
-  <q-page class="flex flex-center">
-    <img
-        alt="geckologo"
-        src="~assets/coingeckoimage.png"
-    >
-    <zap-bond-widget address="0x15A9c99F76245912b84046FE6aF39B9FB51Dcd38" endpoint="CoingeckoUSD"></zap-bond-widget>
-
-    <textarea>
-      This oracle provides the USD value of any asset on CoinGecko.
-
-      We will be continually updating this textarea with documentation and examples in regards to implementation of this oracle.
-    </textarea>
-
-
-  </q-page>
-
-</template>
-
-
-<script>
-export default {
-  name: 'PageIndex',
-  data () {
-    return {
-      coinGeckoOracle:"0xF02491e199565B9822ECf001eB6a336959D655C8",
-      status:"online",
-      accounts:"",
-      slide: 'style',
-      coingecko: 'CoinGecko is a cryptocurrency ranking website that gives a 360 degree overview of cryptocurrencies.'
-    }
-  }
 }
 </script>
