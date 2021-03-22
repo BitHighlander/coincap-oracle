@@ -1,3 +1,5 @@
+
+
 <template>
   <q-layout view="lHh Lpr lFf">
     <!--   <style
@@ -27,16 +29,50 @@
 
           ORACLES.CC
 
+          <q-btn glossy rounded label="Get Zap" color="green" @click="alert = true" icon-right="offline_bolt" />
+          <q-dialog v-model="alert" align="center"  style="min-width:450px;">
+            <q-card style="min-width:450px;">
+              <q-card-section>
+                <div class="text-h6">Buy Zap on Uniswap</div>
+              </q-card-section>
 
+              <q-card-section>
+                <iframe
+                    src="https://app.uniswap.org/#/swap?outputCurrency=0x6781a0f84c7e9e846dcb84a9a5bd49333067b104"
+                    height="660px"
+                    width="100%"
+                    style="
+              border: 0;
+              margin: 0 auto;
+              display: block;
+              border-radius: 10px;
+              max-width: 800px;
+              min-width: 300px;
+            "
+                    id="myId"
+                />
+              </q-card-section>
+
+              <q-card-actions align="right">
+                <q-btn flat label="OK" color="primary" v-close-popup />
+              </q-card-actions>
+            </q-card>
+          </q-dialog>
 
         </q-toolbar-title>
 
 
+        <q-btn
 
+            color="deep-orange"
+            glossy rounded label="Download Metamask"
+            onClick="parent.open('https://metamask.io/download.html')"
+            icon-right="pets"
+
+        ></q-btn>
 
 
         <div>
-
           Powered by Zap.org and Quasar v{{ $q.version }}
         </div>
       </q-toolbar>
@@ -80,18 +116,8 @@
 import EssentialLink from 'components/EssentialLink.vue'
 
 const linksData = [
-  {
-    title: 'Discord Channel',
-    caption: 'https://discord.gg/PfcecUPbUH',
-    icon: 'chat',
-    link: 'https://discord.gg/PfcecUPbUH'
-  },
-  {
-    title: 'Medium',
-    caption: 'https://medium.com/@oracles.cc',
-    icon: 'record_voice_over',
-    link: 'https://medium.com/@oracles.cc'
-  },
+
+
   {
     title: 'Zap',
     caption: 'Zap.org',
@@ -119,6 +145,8 @@ export default {
   components: { EssentialLink },
   data () {
     return {
+      alert: false,
+      open:false,
       leftDrawerOpen: false,
       essentialLinks: linksData
     }

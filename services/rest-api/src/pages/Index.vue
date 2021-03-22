@@ -4,35 +4,7 @@
 
 
 
-    <q-btn label="Buy Zap" color="success" @click="alert = true" />
-    <q-dialog v-model="alert" align="center"  style="min-width:450px;">
-      <q-card style="min-width:450px;">
-        <q-card-section>
-          <div class="text-h6">Buy Zap on Uniswap</div>
-        </q-card-section>
 
-        <q-card-section>
-          <iframe
-                  src="https://app.uniswap.org/#/swap?outputCurrency=0x6781a0f84c7e9e846dcb84a9a5bd49333067b104"
-                  height="660px"
-                  width="100%"
-                  style="
-              border: 0;
-              margin: 0 auto;
-              display: block;
-              border-radius: 10px;
-              max-width: 800px;
-              min-width: 300px;
-            "
-                  id="myId"
-          />
-        </q-card-section>
-
-        <q-card-actions align="right">
-          <q-btn flat label="OK" color="primary" v-close-popup />
-        </q-card-actions>
-      </q-card>
-    </q-dialog>
 
     <img
             alt="geckologo"
