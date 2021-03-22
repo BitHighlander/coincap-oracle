@@ -12,10 +12,13 @@
     >
     <zap-bond-widget address="0x15A9c99F76245912b84046FE6aF39B9FB51Dcd38" endpoint="CoingeckoUSD"></zap-bond-widget>
 
-    <textarea>
-      This oracle provides the USD value of any asset on CoinGecko.
+    <textarea rows="10" cols="25">
+      This oracle provides the USD value of any asset on CoinGecko and is ready to trigger smart contracts on the Ethereum blockchain.
 
-      We will be continually updating this textarea with documentation and examples in regards to implementation of this oracle.
+      Enables the Creation of-
+      -Futures Smart Contracts
+      -Stable Coins
+      -DEX operations
     </textarea>
 
 

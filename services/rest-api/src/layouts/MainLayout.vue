@@ -62,14 +62,7 @@
         </q-toolbar-title>
 
 
-        <q-btn
 
-            color="deep-orange"
-            glossy rounded label="Download Metamask"
-            onClick="parent.open('https://metamask.io/download.html')"
-            icon-right="pets"
-
-        ></q-btn>
 
 
         <div>
@@ -79,7 +72,20 @@
     </q-header>
 
     <q-footer elevated>
+
+
       <q-toolbar>
+        <q-toolbar-title>
+          <q-btn
+
+              color="deep-orange"
+              glossy rounded label="Download Metamask"
+              onClick="parent.open('https://metamask.io/download.html')"
+              icon-right="pets"
+
+          ></q-btn>
+
+        </q-toolbar-title>
 
         <div>enterprise level oracle solutions</div>
       </q-toolbar>
