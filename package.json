@@ -14,5 +14,8 @@
   },
   "dependencies": {
     "coingecko-api": "^1.0.10"
+  },
+  "devDependencies": {
+    "components": "^0.1.0"
   }
 }

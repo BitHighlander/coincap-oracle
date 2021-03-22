@@ -1,53 +1,31 @@
 <template>
-  <div class="q-pa-md">
-    <q-carousel
-            v-model="slide"
-            transition-prev="slide-right"
-            transition-next="slide-left"
-            animated
-            control-color="primary"
-            class="rounded-borders"
+
+  <q-page class="flex flex-center">
+
+
+
+
+
+    <img
+            alt="geckologo"
+            src="~assets/coingeckoimage.png"
     >
+    <zap-bond-widget address="0x15A9c99F76245912b84046FE6aF39B9FB51Dcd38" endpoint="CoingeckoUSD"></zap-bond-widget>
 
-      <q-carousel-slide name="style" class="column no-wrap">
+    <textarea rows="10" cols="25">
+      This oracle provides the USD value of any asset on CoinGecko and is ready to trigger smart contracts on the Ethereum blockchain.
 
-        <div class="q-mt-md">
-            <h3>Coin Gecko Datafeed</h3>
-            <div width="50px" height="60px" style="width: 10%;">
-                <q-img src="https://static.coingecko.com/s/thumbnail-007177f3eca19695592f0b8b0eabbdae282b54154e1be912285c9034ea6cbaf2.png"></q-img>
-            </div>
-<!--          -->
-          {{ coingecko }}
-            <br/>
-
-            <zap-bond-widget address="0x15A9c99F76245912b84046FE6aF39B9FB51Dcd38" endpoint="CoingeckoUSD"></zap-bond-widget>
+      Enables the Creation of-
+      -Futures Smart Contracts
+      -Stable Coins
+      -DEX operations
+    </textarea>
 
 
-        </div>
-      </q-carousel-slide>
+  </q-page>
 
-    </q-carousel>
-
-    <div class="row justify-center">
-      <q-btn-toggle
-              glossy
-              v-model="slide"
-              :options="[
-          { label: 1, value: 'style' },
-          // { label: 2, value: 'tv' },
-          // { label: 3, value: 'layers' },
-        ]"
-      ></q-btn-toggle>
-
-          <div id="content" style="width: 100%;">
-            Powered by :zap:
-          <br />
-            your metamask address: {{accounts}}
-          </div>
-
-    </div>
-  </div>
 </template>
+
 <script>
 
 
@@ -61,12 +39,13 @@ export default {
   },
   data () {
     return {
-      coinGeckoOracle:"",
+      alert:false,
+      coinGeckoOracle:"0xF02491e199565B9822ECf001eB6a336959D655C8",
       status:"online",
       accounts:"",
       slide: 'style',
-      coincap: 'CoinCap keeps you up to date on the status of your crypto with real-time market data and tracking features. ',
       coingecko: 'CoinGecko is a cryptocurrency ranking website that gives a 360 degree overview of cryptocurrencies.',
+      coincap: 'CoinCap keeps you up to date on the status of your crypto with real-time market data and tracking features. ',
       alethiometer: 'alethiometer measures general market consensus of an observed price. they are calculated using a number of data sources.'
     }
   },
